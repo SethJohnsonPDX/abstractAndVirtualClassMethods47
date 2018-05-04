@@ -12,7 +12,13 @@ namespace abstractAndVirtualClassMethods47
         {
             Employee employee = new Employee() { firstName = "Sample", lastName = "Student" };
             employee.SayName();
-            Console.ReadLine();
+
+            IQuittable quitting = new Employee();
+            string quit = "Now quitting program....";
+            quitting.Quit(quit);
+            Console.Read();
+
+
         }
     }
 }

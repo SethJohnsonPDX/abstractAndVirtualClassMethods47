@@ -6,16 +6,34 @@ using System.Threading.Tasks;
 
 namespace abstractAndVirtualClassMethods47
 {
-    class Employee : Person, IQuittable
+    class Employee : Person
     {
+        public List<Person> People { get; set; }
         public override void SayName()
         {
             base.SayName();
         }
 
-        public void Quit(string quit)
+        public static bool operator ==(Employee person, TeamRole role)
         {
-            Console.WriteLine(quit);
+            return person.Id == role.Id;
         }
+
+        public static bool operator !=(Employee person, TeamRole role)
+        {
+            return !(person.Id == role.Id);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+
     }
 }

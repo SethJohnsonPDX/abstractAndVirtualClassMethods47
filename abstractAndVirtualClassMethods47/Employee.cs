@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace abstractAndVirtualClassMethods47
 {
-    class Employee : Person
+    class Employee<T> : Person
     {
-        public List<Person> People { get; set; }
+        public List<T> Things { get; set; }
         public override void SayName()
         {
             base.SayName();
         }
 
-        public static bool operator ==(Employee person, TeamRole role)
+        public static bool operator ==(Employee<T> person, TeamRole role)
         {
             return person.Id == role.Id;
         }
 
-        public static bool operator !=(Employee person, TeamRole role)
+        public static bool operator !=(Employee<T> person, TeamRole role)
         {
             return !(person.Id == role.Id);
         }
